@@ -9,7 +9,7 @@ namespace Crystal_Burden
         public static void Init()
         {
             HerCurse = ScriptableObject.CreateInstance<ArtifactDef>();
-            LanguageAPI.Add("HERCURSE_DESC", "All item drops will be turned into " + HerBurden.nameToken + " Variants");
+            LanguageAPI.Add("HERCURSE_DESC", "All item drops will be turned into Burden Variants.");
             HerCurse.descriptionToken = "HERCURSE_DESC";
             if (Nsfw?.Value ?? false)
             {

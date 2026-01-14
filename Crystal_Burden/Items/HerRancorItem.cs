@@ -40,9 +40,9 @@ namespace Crystal_Burden
             HerRancor.canRemove = true;
             HerRancor.hidden = false;
             if (!VariantDropCount.Value)
-                HerRancor.tags = [ItemTag.WorldUnique, ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
+                HerRancor.tags = [ItemTag.WorldUnique, variantTag, ItemTag.CanBeTemporary];
             else
-                HerRancor.tags = [ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
+                HerRancor.tags = [variantTag, ItemTag.CanBeTemporary];
 
             var rules = new ItemDisplayRuleDict();
             ItemDisplaysExpanded.HerItemDisplay(rules, "orangeher_burden", "Rancor");

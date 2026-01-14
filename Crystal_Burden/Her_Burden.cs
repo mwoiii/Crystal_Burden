@@ -52,6 +52,7 @@ namespace Crystal_Burden
         public static ItemDef VariantOnSurvivor;
         public static List<PickupIndex> TransformedList = new List<PickupIndex>();
         public static PickupIndex CurrentTransformedItem = PickupIndex.none;
+        public static ItemTag variantTag;
         public static float Hbbv;
         public static float Hbdbv;
         public static bool HerBurdenInstalled = false;
@@ -84,6 +85,7 @@ namespace Crystal_Burden
         {
             Log.Init(Logger);
             SoftDependencies.Init();
+            variantTag = R2API.ItemAPI.AddItemTag("BurdenVariant");
             ItemVisibility = Config.Bind<bool>("1. Her Burden Toggle", "Toggle Item Visibility", true, "Changes if Burden Variants shows on the Survivor");
             LuckEffect = Config.Bind<bool>("1. Her Burden Toggle", "Toggle Luck Effect", true, "Changes if luck effects chance to pickup Burden Variants once you have a Variant");
             GiveOriginalItem = Config.Bind<bool>("1. Her Burden Toggle", "Toggle Give Original Item", false, "Changes if you receive the original item along with a Burden Variant (Lunar Tier Exclusive)");
@@ -228,7 +230,7 @@ namespace Crystal_Burden
         public static void LunarItemOrEquipmentCostTypeHelper_PayCost_TakeOne(ILContext il) 
         { 
             var altBehaviourDelegate = new Action<Inventory, ItemIndex, CostTypeDef.PayCostResults>((inventory, itemIndex, result) => {
-                if (TransformedList.Count != 0 && ItemCatalog.GetItemDef(itemIndex).ContainsTag((ItemTag)19) && !TogglePearlCleanse.Value) {
+                if (TransformedList.Count != 0 && ItemCatalog.GetItemDef(itemIndex).ContainsTag(variantTag) && !TogglePearlCleanse.Value) {
                     int ItemsToRemove;
                     CurrentTransformedItem = TransformedList[UnityRandom.Range(0, TransformedList.Count)];
                     ItemTier TransformedTier = PickupCatalog.GetPickupDef(CurrentTransformedItem).itemTier;
@@ -637,7 +639,7 @@ namespace Crystal_Burden
                 return;
             }
             bool burdenvariant = false;
-            if (PickupCatalog.GetPickupDef(pickupInfo.pickup.pickupIndex).itemIndex != ItemIndex.None && ItemCatalog.GetItemDef(PickupCatalog.GetPickupDef(pickupInfo.pickup.pickupIndex).itemIndex).ContainsTag(ItemTag.ObliterationRelated))
+            if (PickupCatalog.GetPickupDef(pickupInfo.pickup.pickupIndex).itemIndex != ItemIndex.None && ItemCatalog.GetItemDef(PickupCatalog.GetPickupDef(pickupInfo.pickup.pickupIndex).itemIndex).ContainsTag(variantTag))
                 burdenvariant = true;
             bool blacklist = false;
             if (pickupInfo.pickup.pickupIndex == PickupCatalog.FindPickupIndex(RoR2Content.Items.ArtifactKey.itemIndex) || pickupInfo.pickup.pickupIndex == PickupCatalog.FindPickupIndex(RoR2Content.Items.LunarTrinket.itemIndex))

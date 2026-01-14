@@ -39,7 +39,8 @@ namespace Crystal_Burden
                 HerBurden.pickupModelPrefab = Crystal_Burden.bundle.LoadAsset<GameObject>("Brdn_Crystal_Burden");
             HerBurden.canRemove = true;
             HerBurden.hidden = false;
-            HerBurden.tags = [ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
+            HerBurden.tags = [variantTag, ItemTag.CanBeTemporary];
+            
 
             var rules = new ItemDisplayRuleDict();
             ItemDisplaysExpanded.HerItemDisplay(rules, "her_burden", "Burden");

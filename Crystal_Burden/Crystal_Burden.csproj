@@ -1,144 +1,34 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A15A3D6A-6AE9-46E1-99BC-007F149C9FC0}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Crystal_Burden</RootNamespace>
-    <AssemblyName>Crystal_Burden</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\stubs\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInEx">
-      <HintPath>..\..\ahope\BepInEx.dll</HintPath>
-    </Reference>
-    <Reference Include="BetterAPI, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\BetterAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="BodyBlend">
-      <HintPath>..\..\ahope\BodyBlend.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Runtime, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\stubs\com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="HGCSharpUtils, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\stubs\HGCSharpUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="LegacyResourcesAPI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\stubs\LegacyResourcesAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="MMHOOK_RoR2">
-      <HintPath>..\..\ahope\MMHOOK_RoR2.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>..\..\ahope\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoMod.RuntimeDetour">
-      <HintPath>..\..\ahope\MonoMod.RuntimeDetour.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoMod.Utils">
-      <HintPath>..\..\ahope\MonoMod.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="R2API.ContentManagement, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\r2api\R2API.ContentManagement.dll</HintPath>
-    </Reference>
-    <Reference Include="R2API.Core, Version=5.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\r2api\R2API.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="R2API.Items, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\r2api\R2API.Items.dll</HintPath>
-    </Reference>
-    <Reference Include="R2API.Language, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\r2api\R2API.Language.dll</HintPath>
-    </Reference>
-    <Reference Include="RoR2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ahope\stubs\RoR2.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\ahope\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>..\..\ahope\UnityEngine.AssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\ahope\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>..\..\ahope\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>..\..\ahope\UnityEngine.ParticleSystemModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\ahope\UnityEngine.UI.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Artifact\HerCurseArtifact.cs" />
-    <Compile Include="BodyBlendCompatibility.cs" />
-    <Compile Include="FakeSizeScripts\FakeBodySizeScript.cs" />
-    <Compile Include="FakeSizeScripts\FakeBurdenPrefabSizeScript.cs" />
-    <Compile Include="FakeSizeScripts\FakeFuryPrefabSizeScript.cs" />
-    <Compile Include="FakeSizeScripts\FakePanicPrefabSizeScript.cs" />
-    <Compile Include="FakeSizeScripts\FakeRancorSizeScript.cs" />
-    <Compile Include="FakeSizeScripts\FakeReclusePrefabSizeScript.cs" />
-    <Compile Include="FakeSizeScripts\FakeSizeHandoffManager.cs" />
-    <Compile Include="FakeSizeScripts\FakeTorporPrefabSizeScript.cs" />
-    <Compile Include="Her_Burden.cs" />
-    <Compile Include="Items\ItemDisplaysExpanded.cs" />
-    <Compile Include="Items\HerBurdenItem.cs" />
-    <Compile Include="Items\HerExperimentalEquipment.cs" />
-    <Compile Include="Items\HerFuryItem.cs" />
-    <Compile Include="Items\HerPanicItem.cs" />
-    <Compile Include="Items\HerRancorItem.cs" />
-    <Compile Include="Items\HerRecluseItem.cs" />
-    <Compile Include="Items\HerTorporItem.cs" />
-    <Compile Include="Items\MiscItems.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SizeScripts\BodySizeScript.cs" />
-    <Compile Include="SizeScripts\PrefabSizeScript.cs" />
-    <Compile Include="SizeScripts\SizeHandoffManager.cs" />
-    <Compile Include="ConfigChanges.cs" />
-    <Compile Include="SoftDependencies.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\herburden" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\herburden" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Analyzers" Version="1.0.8">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<PackageReference Include="BepInEx.Core" Version="5.4.21" />
+
+		<PackageReference Include="R2API" Version="5.0.5" />
+
+		<PackageReference Include="UnityEngine.Modules" Version="2021.3.33" IncludeAssets="compile" />
+		<PackageReference Include="RiskOfRain2.GameLibs" Version="1.4.1-r.0" />
+		<PackageReference Include="MMHOOK.RoR2" Version="2025.12.9" NoWarn="NU1701" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="BodyBlend">
+	    <HintPath>lib\BodyBlend.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
 </Project>

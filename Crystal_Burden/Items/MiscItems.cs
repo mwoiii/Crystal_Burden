@@ -18,6 +18,7 @@ namespace Crystal_Burden
             HBItemPicker.AutoPopulateTokens();
             HBItemPicker.deprecatedTier = ItemTier.NoTier;
             HBItemPicker.hidden = true;
+            HBItemPicker.tags = [ItemTag.CanBeTemporary];
             var rules = new ItemDisplayRuleDict();
             CustomItem CustomItem = new CustomItem(HBItemPicker, rules);
             ItemAPI.Add(CustomItem);

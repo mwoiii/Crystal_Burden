@@ -40,9 +40,9 @@ namespace Crystal_Burden
             HerPanic.canRemove = true;
             HerPanic.hidden = false;
             if (!VariantDropCount.Value)
-                HerPanic.tags = new ItemTag[] { ItemTag.WorldUnique, (ItemTag)19 };
+                HerPanic.tags = [ItemTag.WorldUnique, ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
             else
-                HerPanic.tags = new ItemTag[] { (ItemTag)19 };
+                HerPanic.tags = [ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
 
             var rules = new ItemDisplayRuleDict();
             ItemDisplaysExpanded.HerItemDisplay(rules, "violether_burden", "Panic");

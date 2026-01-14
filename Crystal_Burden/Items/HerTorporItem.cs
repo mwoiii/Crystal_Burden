@@ -40,9 +40,9 @@ namespace Crystal_Burden
             HerTorpor.canRemove = true;
             HerTorpor.hidden = false;
             if (!VariantDropCount.Value)
-                HerTorpor.tags = new ItemTag[] { ItemTag.WorldUnique, (ItemTag)19 };
+                HerTorpor.tags = [ItemTag.WorldUnique, ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
             else
-                HerTorpor.tags = new ItemTag[] { (ItemTag)19 };
+                HerTorpor.tags = [ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
 
             var rules = new ItemDisplayRuleDict();
             ItemDisplaysExpanded.HerItemDisplay(rules, "royalblueher_burden", "Torpor");

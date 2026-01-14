@@ -40,9 +40,9 @@ namespace Crystal_Burden
             HerRecluse.canRemove = true;
             HerRecluse.hidden = false;
             if (!VariantDropCount.Value)
-                HerRecluse.tags = new ItemTag[] { ItemTag.WorldUnique, (ItemTag)19 };
+                HerRecluse.tags = [ItemTag.WorldUnique, ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
             else
-                HerRecluse.tags = new ItemTag[] { (ItemTag)19 };
+                HerRecluse.tags = [ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
 
             var rules = new ItemDisplayRuleDict();
             ItemDisplaysExpanded.HerItemDisplay(rules, "lightishblueher_burden", "Recluse");

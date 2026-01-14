@@ -40,9 +40,9 @@ namespace Crystal_Burden
             HerFury.canRemove = true;
             HerFury.hidden = false;
             if (!VariantDropCount.Value)
-                HerFury.tags = new ItemTag[] { ItemTag.WorldUnique, (ItemTag)19 };
+                HerFury.tags = [ItemTag.WorldUnique, ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
             else
-                HerFury.tags = new ItemTag[] { (ItemTag)19 };
+                HerFury.tags = [ItemTag.ObliterationRelated, ItemTag.CanBeTemporary];
 
             var rules = new ItemDisplayRuleDict();
             ItemDisplaysExpanded.HerItemDisplay(rules, "reallyredher_burden", "Fury");
